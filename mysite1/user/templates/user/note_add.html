@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>create note</title>
+</head>
+<body>
+{% if note %}
+<form action="{{ id }}" method="post" enctype="multipart/form-data">
+    title: <input type="text" name="title" value="{{ note.title }}">
+    <input type="submit" value="save">
+    <a href="{% url 'note' %}">return note list</a><br/>
+    text:
+    <p>
+    <textarea cols="50" rows="50" name="content" maxlength="500" >{{ note.content }}</textarea>
+    </p>
+{% else %}
+    <form action="{% url 'note_add' %}" method="post" enctype="multipart/form-data">
+    title: <input type="text" name="title">
+    <input type="submit" value="save">
+    <a href="{% url 'note' %}">return note list</a><br/>
+    text:
+    <p>
+    <textarea cols="50" rows="50" name="content"></textarea>
+    </p>
+{% endif %}
+<input type="file" name="name">
+</form>
+</body>
+</html>

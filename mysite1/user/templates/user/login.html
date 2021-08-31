@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="{% url 'index' %}">index</a>
+    <form action="/user/login" method="post">
+        username <input type="text" name="username" ><br/>
+        password <input type="password" name="password" ><br/>
+        <input type="checkbox" name="remember">remember your session<br/>
+        <input type="submit" value="enter"><br/>
+    </form>
+</body>
+</html>

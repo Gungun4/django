@@ -1,0 +1,66 @@
+{% extends 'user/index.html' %}
+{% block mynote %}
+{% endblock %}
+{% block content %}
+<p>
+    {{ request.COOKIES.username }}'s notes
+    <a href="{% url 'note_add' %} ">add new note</a>
+    <a href="{% url 'index' %}">return index</a>
+</p>
+
+<table border="1">
+       <tr>
+        <th>id</th>   
+        <th>title</th>
+        <th>content</th>
+        <th>create_time</th>
+        <th>last_time</th>
+        <th>op</th>
+    </tr>
+    {% for note in c_page %}
+        <tr>
+            <td>{{ note.id }}</td>
+            <td>{{ note.title }}</td>
+            <td>{{ note.content }}</td>
+            <td>{{ note.create_date }}</td>
+            <td>{{ note.mod_date }}</td>
+            <td>
+                <a href="note_edit/{{ note.id }}">updata</a>
+                <a href="note_del/{{ note.id }}">delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+<p>
+{% if c_page.has_previous %}
+    <a href="note?page={{ c_page.previous_page_number }}">上一页</a>
+{% else %}
+    上一页
+{% endif %}
+
+
+{% for i in notes.page_range %}
+    {% if i|add:2 >= c_page.number and i < c_page.number %}
+        <a href="note?page={{ i }}">{{ i }}</a>
+    {% elif c_page.number == i %}
+        {{ i }}
+    {% elif i > c_page.number and i|add:-3 <= c_page.number %}
+         <a href="note?page={{ i }}">{{ i }}</a>
+    {% endif %}
+{% endfor %}
+
+{% if c_page.has_next %}
+    <a href="note?page={{ c_page.next_page_number }}">下一页</a>
+{% else %}
+    下一页
+{% endif %}
+
+总共 {{ notes.count }} 条数据
+</p>
+   <P>
+   <a href="create_csv?page={{ c_page.number }}">create csv</a>
+   </P>
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,514 @@
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 27 16:12:36 2021] ***
+compiled with version: 10.3.0 on 27 August 2021 07:49:53
+os: Linux-5.8.0-25-generic #26-Ubuntu SMP Thu Oct 15 10:30:38 UTC 2020
+nodename: gun-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/gun/django/mysite1/mysite1
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/gun/django/mysite1
+your processes number limit is 31489
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 127.0.0.1:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:40851 (port auto-assigned) fd 3
+Python version: 3.8.10 (default, Jun  2 2021, 10:49:15)  [GCC 10.3.0]
+Python main interpreter initialized at 0x555de3a15da0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 166752 bytes (162 KB) for 2 cores
+*** Operational MODE: threaded ***
+/home/gun/django/mysite1
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x555de3a15da0 pid: 119849 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 119849)
+spawned uWSGI worker 1 (pid: 119851, cores: 2)
+spawned uWSGI http 1 (pid: 119853)
+1 127.0.0.1 /user/note
+mymw process_view
+info: 1
+/home/gun/django/mysite1/./user/views.py:115: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'user.models.Note'> QuerySet.
+  notes = Paginator(Note.objects.filter(user=uid),10)
+mymw response
+[pid: 119851|app: 0|req: 1/1] 127.0.0.1 () {42 vars in 813 bytes} [Fri Aug 27 16:13:47 2021] GET /user/note => generated 4239 bytes in 105 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+1 127.0.0.1 /user/note
+mymw process_view
+info: 1
+mymw response
+[pid: 119851|app: 0|req: 2/2] 127.0.0.1 () {42 vars in 813 bytes} [Fri Aug 27 16:42:46 2021] GET /user/note => generated 4239 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 119853)
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 27 17:56:59 2021] ***
+compiled with version: 10.3.0 on 27 August 2021 07:49:53
+os: Linux-5.8.0-25-generic #26-Ubuntu SMP Thu Oct 15 10:30:38 UTC 2020
+nodename: gun-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/gun/django/mysite1/mysite1
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/gun/django/mysite1
+your processes number limit is 31489
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 3
+Python version: 3.8.10 (default, Jun  2 2021, 10:49:15)  [GCC 10.3.0]
+Python main interpreter initialized at 0x561f2780eca0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 166752 bytes (162 KB) for 2 cores
+*** Operational MODE: threaded ***
+/home/gun/django/mysite1
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x561f2780eca0 pid: 142393 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 142393)
+spawned uWSGI worker 1 (pid: 142395, cores: 2)
+1 127.0.0.1 /
+mymw process_view
+mymw response
+[pid: 142395|app: 0|req: 1/1] 127.0.0.1 () {46 vars in 828 bytes} [Fri Aug 27 17:57:32 2021] GET / => generated 193 bytes in 36 msecs (HTTP/1.1 200) 3 headers in 109 bytes (1 switches on core 0)
+[pid: 142395|app: 0|req: 2/2] 127.0.0.1 () {42 vars in 745 bytes} [Fri Aug 27 20:46:17 2021] GET /admin => generated 0 bytes in 7 msecs (HTTP/1.1 301) 3 headers in 112 bytes (1 switches on core 1)
+1 127.0.0.1 /admin/
+mymw process_view
+mymw response
+[pid: 142395|app: 0|req: 3/3] 127.0.0.1 () {42 vars in 747 bytes} [Fri Aug 27 20:46:17 2021] GET /admin/ => generated 0 bytes in 33 msecs (HTTP/1.1 302) 7 headers in 265 bytes (1 switches on core 0)
+1 127.0.0.1 /admin/login/
+mymw process_view
+mymw response
+[pid: 142395|app: 0|req: 4/4] 127.0.0.1 () {42 vars in 784 bytes} [Fri Aug 27 20:46:17 2021] GET /admin/login/?next=/admin/ => generated 1821 bytes in 56 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 1)
+1 127.0.0.1 /static/admin/css/login.css
+1 127.0.0.1 /static/admin/css/base.css
+mymw response
+Not Found: /static/admin/css/base.css
+mymw response
+Not Found: /static/admin/css/login.css
+[pid: 142395|app: 0|req: 6/5] 127.0.0.1 () {42 vars in 752 bytes} [Fri Aug 27 20:46:17 2021] GET /static/admin/css/base.css => generated 3791 bytes in 21 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 142395|app: 0|req: 7/6] 127.0.0.1 () {42 vars in 754 bytes} [Fri Aug 27 20:46:17 2021] GET /static/admin/css/login.css => generated 3794 bytes in 19 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+1 127.0.0.1 /static/admin/css/responsive.css
+mymw response
+Not Found: /static/admin/css/responsive.css
+[pid: 142395|app: 0|req: 7/7] 127.0.0.1 () {42 vars in 764 bytes} [Fri Aug 27 20:46:17 2021] GET /static/admin/css/responsive.css => generated 3809 bytes in 9 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+1 127.0.0.1 /admin/login/
+mymw process_view
+mymw response
+[pid: 142395|app: 0|req: 8/8] 127.0.0.1 () {44 vars in 815 bytes} [Fri Aug 27 20:47:39 2021] GET /admin/login/?next=/admin/ => generated 1821 bytes in 15 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 1)
+1 127.0.0.1 /static/admin/css/base.css
+mymw response
+Not Found: /static/admin/css/base.css
+[pid: 142395|app: 0|req: 10/9] 127.0.0.1 () {44 vars in 783 bytes} [Fri Aug 27 20:47:39 2021] GET /static/admin/css/base.css => generated 3791 bytes in 11 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+1 127.0.0.1 /static/admin/css/login.css
+mymw response
+Not Found: /static/admin/css/login.css
+[pid: 142395|app: 0|req: 11/10] 127.0.0.1 () {44 vars in 785 bytes} [Fri Aug 27 20:47:39 2021] GET /static/admin/css/login.css => generated 3794 bytes in 14 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+1 127.0.0.1 /static/admin/css/responsive.css
+mymw response
+Not Found: /static/admin/css/responsive.css
+[pid: 142395|app: 0|req: 11/11] 127.0.0.1 () {44 vars in 795 bytes} [Fri Aug 27 20:47:39 2021] GET /static/admin/css/responsive.css => generated 3809 bytes in 11 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+1 127.0.0.1 /admin/login/
+mymw process_view
+mymw response
+[pid: 142395|app: 0|req: 12/12] 127.0.0.1 () {44 vars in 815 bytes} [Fri Aug 27 20:49:15 2021] GET /admin/login/?next=/admin/ => generated 1821 bytes in 17 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 1)
+1 127.0.0.1 /admin/login/
+mymw process_view
+mymw response
+[pid: 142395|app: 0|req: 13/13] 127.0.0.1 () {44 vars in 815 bytes} [Fri Aug 27 20:49:42 2021] GET /admin/login/?next=/admin/ => generated 1821 bytes in 16 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+1 127.0.0.1 /admin/
+mymw process_view
+mymw response
+[pid: 142395|app: 0|req: 14/14] 127.0.0.1 () {42 vars in 747 bytes} [Fri Aug 27 20:49:47 2021] GET /admin/ => generated 0 bytes in 8 msecs (HTTP/1.1 302) 7 headers in 265 bytes (1 switches on core 1)
+1 127.0.0.1 /admin/login/
+mymw process_view
+mymw response
+[pid: 142395|app: 0|req: 15/15] 127.0.0.1 () {42 vars in 784 bytes} [Fri Aug 27 20:49:47 2021] GET /admin/login/?next=/admin/ => generated 1821 bytes in 14 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+1 127.0.0.1 /admin/login/
+mymw process_view
+mymw response
+[pid: 142395|app: 0|req: 16/16] 127.0.0.1 () {44 vars in 815 bytes} [Fri Aug 27 20:50:34 2021] GET /admin/login/?next=/admin/ => generated 1821 bytes in 42 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 1)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+1 127.0.0.1 /admin/
+mymw process_view
+mymw response
+[pid: 142395|app: 0|req: 17/17] 127.0.0.1 () {42 vars in 747 bytes} [Fri Aug 27 20:50:51 2021] GET /admin/ => generated 0 bytes in 10 msecs (HTTP/1.1 302) 7 headers in 265 bytes (1 switches on core 1)
+1 127.0.0.1 /admin/login/
+mymw process_view
+mymw response
+[pid: 142395|app: 0|req: 18/18] 127.0.0.1 () {42 vars in 784 bytes} [Fri Aug 27 20:50:51 2021] GET /admin/login/?next=/admin/ => generated 1821 bytes in 15 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 27 20:53:51 2021] ***
+compiled with version: 10.3.0 on 27 August 2021 07:49:53
+os: Linux-5.8.0-25-generic #26-Ubuntu SMP Thu Oct 15 10:30:38 UTC 2020
+nodename: gun-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/gun/django/mysite1/mysite1
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/gun/django/mysite1
+your processes number limit is 31489
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 3
+Python version: 3.8.10 (default, Jun  2 2021, 10:49:15)  [GCC 10.3.0]
+Python main interpreter initialized at 0x55d9d02bfca0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 166752 bytes (162 KB) for 2 cores
+*** Operational MODE: threaded ***
+/home/gun/django/mysite1
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55d9d02bfca0 pid: 145661 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 145661)
+spawned uWSGI worker 1 (pid: 145663, cores: 2)
+1 127.0.0.1 /admin/login/
+mymw process_view
+mymw response
+[pid: 145663|app: 0|req: 1/1] 127.0.0.1 () {44 vars in 815 bytes} [Fri Aug 27 20:53:58 2021] GET /admin/login/?next=/admin/ => generated 1821 bytes in 109 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+1 127.0.0.1 /admin/login/
+mymw process_view
+mymw response
+[pid: 145663|app: 0|req: 2/2] 127.0.0.1 () {44 vars in 815 bytes} [Fri Aug 27 20:57:38 2021] GET /admin/login/?next=/admin/ => generated 1821 bytes in 15 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 1)
+1 127.0.0.1 /admin/login/
+mymw process_view
+mymw response
+[pid: 145663|app: 0|req: 3/3] 127.0.0.1 () {42 vars in 810 bytes} [Fri Aug 27 21:03:08 2021] GET /admin/login/?next=/admin/asdfadfsdfsdf => generated 1847 bytes in 16 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 0)
+1 127.0.0.1 /admin/login/
+mymw process_view
+mymw response
+[pid: 145663|app: 0|req: 4/4] 127.0.0.1 () {42 vars in 826 bytes} [Fri Aug 27 21:03:12 2021] GET /admin/login/?next=/admin/asdfadfsdfsdfdasfasdf => generated 1863 bytes in 14 msecs (HTTP/1.1 200) 7 headers in 395 bytes (1 switches on core 1)
+1 127.0.0.1 /ad/login/
+mymw response
+Not Found: /ad/login/
+[pid: 145663|app: 0|req: 5/5] 127.0.0.1 () {42 vars in 820 bytes} [Fri Aug 27 21:03:23 2021] GET /ad/login/?next=/admin/asdfadfsdfsdfdasfasdf => generated 3777 bytes in 8 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+1 192.168.2.1 /user/index
+mymw process_view
+mymw response
+[pid: 145663|app: 0|req: 6/6] 192.168.2.1 () {42 vars in 801 bytes} [Sun Aug 29 12:46:02 2021] GET /user/index => generated 256 bytes in 62 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 1)
+2 192.168.2.1 /favicon.ico
+mymw response
+Not Found: /favicon.ico
+[pid: 145663|app: 0|req: 7/7] 192.168.2.1 () {42 vars in 744 bytes} [Sun Aug 29 12:46:02 2021] GET /favicon.ico => generated 3753 bytes in 14 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+2 192.168.2.1 /user/note
+mymw process_view
+info: 1
+/home/gun/django/mysite1/./user/views.py:115: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'user.models.Note'> QuerySet.
+  notes = Paginator(Note.objects.filter(user=uid),10)
+mymw response
+[pid: 145663|app: 0|req: 8/8] 192.168.2.1 () {44 vars in 846 bytes} [Sun Aug 29 12:46:11 2021] GET /user/note => generated 4239 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+1 192.168.2.1 /user/index
+mymw process_view
+mymw response
+[pid: 145663|app: 0|req: 9/9] 192.168.2.1 () {44 vars in 847 bytes} [Sun Aug 29 12:46:52 2021] GET /user/index => generated 256 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+1 192.168.2.1 /user/index
+mymw process_view
+mymw response
+[pid: 145663|app: 0|req: 10/10] 192.168.2.1 () {46 vars in 878 bytes} [Sun Aug 29 13:09:29 2021] GET /user/index => generated 256 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 1)
+2 192.168.2.1 /user/index
+mymw process_view
+mymw response
+[pid: 145663|app: 0|req: 11/11] 192.168.2.1 () {46 vars in 878 bytes} [Sun Aug 29 13:09:30 2021] GET /user/index => generated 256 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+3 192.168.2.1 /user/index
+mymw process_view
+mymw response
+[pid: 145663|app: 0|req: 12/12] 192.168.2.1 () {44 vars in 832 bytes} [Sun Aug 29 13:09:37 2021] GET /user/index => generated 256 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 1)
+4 192.168.2.1 /user/index
+mymw process_view
+mymw response
+[pid: 145663|app: 0|req: 13/13] 192.168.2.1 () {44 vars in 832 bytes} [Sun Aug 29 13:09:38 2021] GET /user/index => generated 256 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Aug 29 13:11:49 2021] ***
+compiled with version: 10.3.0 on 27 August 2021 07:49:53
+os: Linux-5.8.0-25-generic #26-Ubuntu SMP Thu Oct 15 10:30:38 UTC 2020
+nodename: gun-virtual-machine
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/gun/django/mysite1/mysite1
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+chdir() to /home/gun/django/mysite1
+your processes number limit is 31489
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 3
+Python version: 3.8.10 (default, Jun  2 2021, 10:49:15)  [GCC 10.3.0]
+Python main interpreter initialized at 0x555959627ca0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 166752 bytes (162 KB) for 2 cores
+*** Operational MODE: threaded ***
+/home/gun/django/mysite1
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x555959627ca0 pid: 164191 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 164191)
+spawned uWSGI worker 1 (pid: 164193, cores: 2)
+[pid: 164193|app: 0|req: 1/1] 192.168.2.1 () {44 vars in 832 bytes} [Sun Aug 29 13:11:55 2021] GET /user/index => generated 290 bytes in 40 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+Internal Server Error: /user/info/4
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gun/django/mysite1/./user/views.py", line 21, in wrap
+    return fn(request, *args, **kwargs)
+TypeError: info() got an unexpected keyword argument 'id'
+[pid: 164193|app: 0|req: 2/2] 192.168.2.1 () {44 vars in 850 bytes} [Sun Aug 29 13:12:00 2021] GET /user/info/4 => generated 58589 bytes in 38 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 1)
+Internal Server Error: /user/info/4
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gun/django/mysite1/./user/views.py", line 21, in wrap
+    return fn(request, *args, **kwargs)
+TypeError: info() got an unexpected keyword argument 'id'
+[pid: 164193|app: 0|req: 3/3] 192.168.2.1 () {46 vars in 881 bytes} [Sun Aug 29 13:16:37 2021] GET /user/info/4 => generated 58724 bytes in 29 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+Internal Server Error: /user/info/4
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gun/django/mysite1/./user/views.py", line 21, in wrap
+    return fn(request, *args, **kwargs)
+TypeError: info() got an unexpected keyword argument 'id'
+[pid: 164193|app: 0|req: 4/4] 192.168.2.1 () {44 vars in 850 bytes} [Sun Aug 29 13:41:34 2021] GET /user/info/4 => generated 58589 bytes in 23 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 1)
+Internal Server Error: /user/info/4
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gun/django/mysite1/./user/views.py", line 21, in wrap
+    return fn(request, *args, **kwargs)
+TypeError: info() got an unexpected keyword argument 'id'
+[pid: 164193|app: 0|req: 5/5] 192.168.2.1 () {46 vars in 881 bytes} [Sun Aug 29 13:41:53 2021] GET /user/info/4 => generated 58724 bytes in 42 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+Internal Server Error: /user/info/4
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gun/django/mysite1/./user/views.py", line 21, in wrap
+    return fn(request, *args, **kwargs)
+TypeError: info() got an unexpected keyword argument 'id'
+[pid: 164193|app: 0|req: 6/6] 192.168.2.1 () {44 vars in 834 bytes} [Sun Aug 29 13:41:57 2021] GET /user/info/4 => generated 58573 bytes in 23 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 1)
+Internal Server Error: /user/info/4
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gun/django/mysite1/./user/views.py", line 21, in wrap
+    return fn(request, *args, **kwargs)
+TypeError: info() got an unexpected keyword argument 'id'
+[pid: 164193|app: 0|req: 7/7] 192.168.2.1 () {44 vars in 834 bytes} [Sun Aug 29 13:42:06 2021] GET /user/info/4 => generated 58573 bytes in 22 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+Internal Server Error: /user/info/4
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gun/django/mysite1/./user/views.py", line 21, in wrap
+    return fn(request, *args, **kwargs)
+TypeError: info() got an unexpected keyword argument 'id'
+[pid: 164193|app: 0|req: 8/8] 192.168.2.1 () {44 vars in 834 bytes} [Sun Aug 29 13:42:17 2021] GET /user/info/4 => generated 58573 bytes in 24 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 1)
+Internal Server Error: /user/info/4
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gun/django/mysite1/./user/views.py", line 21, in wrap
+    return fn(request, *args, **kwargs)
+TypeError: info() got an unexpected keyword argument 'id'
+[pid: 164193|app: 0|req: 9/9] 192.168.2.1 () {44 vars in 834 bytes} [Sun Aug 29 13:42:21 2021] GET /user/info/4 => generated 58573 bytes in 24 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+Internal Server Error: /user/info/4
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gun/django/mysite1/./user/views.py", line 21, in wrap
+    return fn(request, *args, **kwargs)
+TypeError: info() got an unexpected keyword argument 'id'
+[pid: 164193|app: 0|req: 10/10] 192.168.2.1 () {44 vars in 834 bytes} [Sun Aug 29 13:42:22 2021] GET /user/info/4 => generated 58573 bytes in 22 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 1)
+[pid: 164193|app: 0|req: 11/11] 192.168.2.1 () {44 vars in 832 bytes} [Sun Aug 29 13:42:29 2021] GET /user/index => generated 290 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+[pid: 164193|app: 0|req: 12/12] 192.168.2.1 () {44 vars in 832 bytes} [Sun Aug 29 13:42:30 2021] GET /user/index => generated 290 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 1)
+[pid: 164193|app: 0|req: 13/13] 192.168.2.1 () {44 vars in 832 bytes} [Sun Aug 29 13:42:38 2021] GET /user/index => generated 290 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+info: 1
+/home/gun/django/mysite1/./user/views.py:115: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'user.models.Note'> QuerySet.
+  notes = Paginator(Note.objects.filter(user=uid),10)
+[pid: 164193|app: 0|req: 14/14] 192.168.2.1 () {44 vars in 846 bytes} [Sun Aug 29 13:42:39 2021] GET /user/note => generated 4273 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+info: 1
+[pid: 164193|app: 0|req: 15/15] 192.168.2.1 () {44 vars in 845 bytes} [Sun Aug 29 13:42:44 2021] GET /user/note => generated 4273 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+Internal Server Error: /user/info/4
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gun/django/mysite1/./user/views.py", line 21, in wrap
+    return fn(request, *args, **kwargs)
+TypeError: info() got an unexpected keyword argument 'id'
+[pid: 164193|app: 0|req: 16/16] 192.168.2.1 () {44 vars in 849 bytes} [Sun Aug 29 13:42:46 2021] GET /user/info/4 => generated 58588 bytes in 22 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 1)
+info: 1
+[pid: 164193|app: 0|req: 17/17] 192.168.2.1 () {46 vars in 876 bytes} [Sun Aug 29 13:43:44 2021] GET /user/note => generated 4273 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 164193|app: 0|req: 18/18] 192.168.2.1 () {44 vars in 847 bytes} [Sun Aug 29 13:43:47 2021] GET /user/index => generated 290 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 1)
+Internal Server Error: /user/info/4
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gun/django/mysite1/./user/views.py", line 21, in wrap
+    return fn(request, *args, **kwargs)
+TypeError: info() got an unexpected keyword argument 'id'
+[pid: 164193|app: 0|req: 19/19] 192.168.2.1 () {44 vars in 850 bytes} [Sun Aug 29 13:43:48 2021] GET /user/info/4 => generated 58589 bytes in 22 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 164193|app: 0|req: 20/20] 192.168.2.1 () {46 vars in 878 bytes} [Sun Aug 29 13:44:04 2021] GET /user/index => generated 290 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 1)
+[pid: 164193|app: 0|req: 21/21] 192.168.2.1 () {46 vars in 878 bytes} [Sun Aug 29 13:44:04 2021] GET /user/index => generated 290 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+[pid: 164193|app: 0|req: 22/22] 192.168.2.1 () {46 vars in 878 bytes} [Sun Aug 29 13:44:04 2021] GET /user/index => generated 290 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 1)
+Internal Server Error: /user/info/4
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gun/django/mysite1/./user/views.py", line 21, in wrap
+    return fn(request, *args, **kwargs)
+TypeError: info() got an unexpected keyword argument 'id'
+[pid: 164193|app: 0|req: 23/23] 192.168.2.1 () {44 vars in 850 bytes} [Sun Aug 29 13:44:05 2021] GET /user/info/4 => generated 58589 bytes in 21 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+Internal Server Error: /user/info/4
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gun/django/mysite1/./user/views.py", line 21, in wrap
+    return fn(request, *args, **kwargs)
+TypeError: info() got an unexpected keyword argument 'id'
+[pid: 164193|app: 0|req: 24/24] 192.168.2.1 () {46 vars in 881 bytes} [Sun Aug 29 13:48:38 2021] GET /user/info/4 => generated 58724 bytes in 23 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 1)
+Internal Server Error: /user/info/4
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gun/django/mysite1/./user/views.py", line 21, in wrap
+    return fn(request, *args, **kwargs)
+TypeError: info() got an unexpected keyword argument 'id'
+[pid: 164193|app: 0|req: 25/25] 192.168.2.1 () {44 vars in 834 bytes} [Sun Aug 29 13:48:41 2021] GET /user/info/4 => generated 58573 bytes in 23 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+Internal Server Error: /user/info/4
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.8/dist-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/gun/django/mysite1/./user/views.py", line 21, in wrap
+    return fn(request, *args, **kwargs)
+TypeError: info() got an unexpected keyword argument 'id'
+[pid: 164193|app: 0|req: 26/26] 192.168.2.1 () {44 vars in 834 bytes} [Sun Aug 29 13:48:42 2021] GET /user/info/4 => generated 58573 bytes in 23 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 1)
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip
+invalid request block size: 21584 (max 4096)...skip

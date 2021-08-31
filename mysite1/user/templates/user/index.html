@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Title{% endblock %}</title>
+</head>
+<body>
+
+{% if request.session.username %}
+    <p>
+        welcome {{ request.session.username }}
+        <a href="{% url 'logout' %}">quit out</a>
+        <a href="{% url 'note' %}">with my note</a>
+        <a href="info/{{ request.session.uid }}">info</a>
+    </p>
+{% else %}
+    {% if request.COOKIES.username %}
+        <p>
+            welcome {{ request.COOKIES.username }}
+            <a href="{% url 'logout' %}">quit out</a>
+            <a href="{% url 'note' %}">with my note</a>
+        </p>
+        <a href="info/{{ request.COOKIES.uid }}">info</a>
+
+    {% else %}
+        <p>
+        <a href="{% url 'login' %}">login</a>
+        </p>
+        <p>
+        <a href="{% url 'signin' %}">sign in</a>
+        </p>
+    {% endif %}
+{% endif %}
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
