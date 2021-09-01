@@ -49,8 +49,9 @@ A ny individuals and organizations and not for commercial use, professiona websi
             success:function (result){
                 if (result.code == 200){
                     window.localStorage.setItem('dnblog_token',result.data.token)
-                    window.localStorage.setItem('dnbilog_user',result.username)
+                    window.localStorage.setItem('dnblog_user',result.username)
                     alert('login success')
+                    window.location.href = result.username + '/info'
                 }else {
                     alert(result.error)
                 }
