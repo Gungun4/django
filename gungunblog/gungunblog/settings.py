@@ -28,6 +28,13 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
+# 假设您还使用 Django settings.py来配置 Celery，请添加以下设置：
+
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379/3'  # Broker配置，使用Redis作为消息中间件
+CELERY_RESULT_BACKEND = 'django-db'  # 'django-cache'
+# CELERY_RESULT_BACKEND = 'redis://10.1.210.69:6379/0'  # BACKEND配置，这里使用redis
+CELERY_RESULT_SERIALIZER = 'json'  # 结果序列化方案
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -35,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_celery_results',
+    'django_celery_beat',
     'corsheaders',
     'user',
 
@@ -85,6 +94,20 @@ DATABASES = {
     }
 }
 
+CACHES = {
+    'default': {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/3",
+        "TIMEOUT": 300,
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "CACHE_HERD_TIMEOUT": 300,
+            "CONNECTION_POOL_KWARGS": {"max_connections": 100},
+            # "PASSWORD": "123456",
+
+        }
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 

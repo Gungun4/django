@@ -25,3 +25,31 @@ class UserProfile(models.Model):
 
     class Meta:
         db_table = 'user_user_profile'
+
+
+class Blog(models.Model):
+    user_profile_username = models.ForeignKey(to=UserProfile, on_delete=models.CASCADE)
+    title = models.CharField(max_length=30, verbose_name='title', null=False)
+    content = models.TextField()
+    is_active = models.BooleanField(default=True)
+    is_technology = models.BooleanField(default=True)
+    created_time = models.DateTimeField(auto_now_add=True)
+    updated_time = models.DateTimeField(auto_now=True)
+    category_choice = (('tec', '技术'), ('game', '游戏'), ('news', '新闻'), ('sports', '体育'))
+    category = models.CharField(max_length=11, choices=category_choice, default='tec')
+    img = models.ImageField(upload_to='blog_img',null=True)
+
+    class Meta:
+        db_table = 'user_blog'
+
+
+class Comment(models.Model):
+    text = models.TextField()
+    likes = models.IntegerField(default=0)
+    created_time = models.DateTimeField(auto_now_add=True)
+    updated_time = models.DateTimeField(auto_now=True)
+    blog = models.ForeignKey(to=Blog, on_delete=models.CASCADE)
+    user_profile_username = models.ForeignKey(to=UserProfile, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'user_comment'

@@ -79,6 +79,26 @@ A ny individuals and organizations and not for commercial use, professiona websi
     var countdown = 60;
 
     function settime(obj) {
+        var phone = $('.phone').val();
+        var post_data = {
+            "phone": phone
+        };
+        if (countdown == 60){
+            $.ajax({
+            type: "post",
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(post_data),
+            url: "http://127.0.0.1:8001/v1/users/sms",
+            success: function (result){
+                if (result.code == 200){
+                    alert('send success')
+                }else {
+                    alert(result.error)
+                }
+            }
+        })
+        }
         if (countdown == 0) {
             obj.removeAttribute("disabled");
             obj.value = "免费获取验证码";
@@ -101,23 +121,25 @@ A ny individuals and organizations and not for commercial use, professiona websi
         var password_1 = $('.password_1').val();
         var password_2 = $('.password_2').val();
         var phone = $('.phone').val();
+        var sms_num = $('.sms_num').val();
         var post_data = {
             "username": username,
             "email": email,
             "password_1": password_1,
             "password_2": password_2,
-            "phone": phone
+            "phone": phone,
+            "sms_num": sms_num,
         };
         $.ajax({
             type: "post",
             contentType: "application/json",
-            dataType:"json",
-            data:JSON.stringify(post_data),
-            url:"http://127.0.0.1:8001/v1/users",
-            success: function (result){
-                if (result.code == 200){
+            dataType: "json",
+            data: JSON.stringify(post_data),
+            url: "http://127.0.0.1:8001/v1/users",
+            success: function (result) {
+                if (result.code == 200) {
                     alert("success")
-                }else{
+                } else {
                     alert(result.error)
                 }
             }

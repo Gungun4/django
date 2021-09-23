@@ -45,7 +45,7 @@ A ny individuals and organizations and not for commercial use, professiona websi
             contentType:'application/json',
             dataType:'json',
             data: JSON.stringify(post_data),
-            url:'http://127.0.0.1:8001/v1/tokens',
+            url:'http://192.168.2.128:8001/v1/tokens',
             success:function (result){
                 if (result.code == 200){
                     window.localStorage.setItem('dnblog_token',result.data.token)

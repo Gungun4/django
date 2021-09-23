@@ -54,7 +54,6 @@ class YunTongXin():
         timestamp = self.get_timestamp()
         sig = self.get_sig(timestamp)
         url = self.get_request_url(sig)
-        print(url)
         header = self.get_request_header(timestamp)
         body = self.get_request_body(phone, code)
         data = self.request_api(url, header, json.dumps(body))

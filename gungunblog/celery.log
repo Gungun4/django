@@ -1,0 +1,30 @@
+nohup: 忽略输入
+ 
+ -------------- celery@gun-virtual-machine v5.1.2 (sun-harmonics)
+--- ***** ----- 
+-- ******* ---- Linux-5.8.0-25-generic-x86_64-with-glibc2.32 2021-09-02 17:40:40
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         gungunblog:0x7fed7fec48e0
+- ** ---------- .> transport:   redis://127.0.0.1:6379/2
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 1000 (gevent)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[2021-09-02 17:40:40,700: WARNING/MainProcess] /usr/local/lib/python3.8/dist-packages/celery/app/utils.py:204: CDeprecationWarning: 
+    The 'BROKER_URL' setting is deprecated and scheduled for removal in
+    version 6.0.0. Use the broker_url instead
+
+  deprecated.warn(description=f'The {setting!r} setting',
+
+[2021-09-02 17:40:40,700: WARNING/MainProcess] Please run `celery upgrade settings path/to/settings.py` to avoid these warnings and to allow a smoother upgrade to Celery 6.0.
+[2021-09-02 17:40:41,735: WARNING/MainProcess] /usr/local/lib/python3.8/dist-packages/celery/fixups/django.py:203: UserWarning: Using settings.DEBUG leads to a memory
+            leak, never use this setting in production environments!
+  warnings.warn('''Using settings.DEBUG leads to a memory
+
+
+worker: Warm shutdown (MainProcess)
